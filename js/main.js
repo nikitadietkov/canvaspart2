@@ -30,16 +30,15 @@ cnvs.height = 500;
 
 cnvs.addEventListener('mousemove', function (event) {
     console.log(event);
-    
- ctx.fillStyle = myColor
- ctx.strokeStyle = myColor
- ctx.lineTo(event.clientX, event.clientY)
- ctx.stroke()
- ctx.beginPath()
- ctx.arc(event.clientX, event.clientY, myWeight, 0, Math.PI * 2)
- ctx.fill()
- ctx.beginPath()
- ctx.moveTo(event.clientX, event.clientY)
+    ctx.fillStyle = myColor
+    ctx.strokeStyle = myColor
+    ctx.lineTo(event.offsetX, event.offsetY)
+    ctx.stroke()
+    ctx.beginPath()
+    ctx.arc(event.offsetX, event.offsetY, myWeight, 0, Math.PI * 2)
+    ctx.fill()
+    ctx.beginPath()
+    ctx.moveTo(event.offsetX, event.offsetY)
 })
 
 paintColor.addEventListener("change", () => {
